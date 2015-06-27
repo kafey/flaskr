@@ -35,6 +35,12 @@ def teardown_request(exeption):
 	db = getarr(g, 'db', None)
 	if db is not None:
 		db.close()
+		
+@app.route('/')
+def show_entries():
+	cur = g.db.execute('select title, text from entries order by id desc')
+	
+
 	
 if __name__ == '__main__':
 	app.run()
