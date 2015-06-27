@@ -2,33 +2,15 @@
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
 	abort, render_template, flash
-<<<<<<< HEAD
+from contextlib import closing
 
 # configuration
-DATABASE = '/tmp/flaskr.db'
-=======
-from contextlib import closing
-	
-# configuration
 DATABASE = 'flaskr.db'
->>>>>>> c8e6bfe5b6d0a9b8143398f17e83de75b6022d1c
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
 PASSWORD = 'default'
 
-<<<<<<< HEAD
-# create our little application :)
-app = Flask(__name__)
-app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-
-# db connect
-def connect_db():
-	return sqlite3.connect(app.config['DATABASE'])
-
-if __name__ == '__main__':
-	app.run(debug=True)
-=======
 
 # create our little application :)
 app= Flask(__name__)
@@ -56,4 +38,5 @@ def teardown_request(exeption):
 	
 if __name__ == '__main__':
 	app.run()
+
 
