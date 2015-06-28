@@ -99,14 +99,14 @@ def login():
 			error = 'Invalid password'
 		else:
 			session['logged_in'] = True
-			flash('You were logged in')
+			flash('You are logged in')
 			return redirect(url_for('show_entries'))
 	return render_template('login.html', error=error)
 
 
 
 @app.route('/logout')
-def logout():
+def logut():
 	session.pop('logged_in', None)
 	flash('You were logged out')
 	return redirect(url_for('show_entries'))
